@@ -1,12 +1,6 @@
 .random-planet-wrap {
-  display: flex;
-  align-items: center;
   width: 100%;
-  border-radius: 15px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  box-sizing: border-box;
-  border: 2px solid rgba(73, 68, 68, .1);
 }
 .planet-img {
   width: 200px;
@@ -38,8 +32,4 @@
 }
 .details-item-title::after {
   content: ':';
-}
-.spinner-wrap {
-  justify-content: center;
-  flex-shrink: 0;
 }

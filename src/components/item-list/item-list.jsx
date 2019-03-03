@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Spinner from '../spinner/spinner';
+import Wrap from '../wrap/wrap';
 import './item-list.css';
 
 export default class ItemList extends Component {
@@ -25,13 +26,14 @@ export default class ItemList extends Component {
 
   render() {
     const { itemList } = this.state;
-    if (!itemList) {
-      return <div className='item-list spinner-wrap'><Spinner/></div>
-    }
+    const spinner = itemList ? null : <Spinner/>;
     return (
-      <ul className='item-list'>
-        {this.renderItems(itemList)} 
-      </ul>
+      <Wrap spinner={!itemList} additionalClassName='item-list-wrap'>
+        {spinner}
+        <ul className='item-list'>
+          {this.renderItems(itemList)} 
+        </ul>
+      </Wrap>
     )
   }
 }

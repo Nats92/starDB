@@ -3,6 +3,7 @@ import DataService from '../../services/dataService';
 import Spinner from '../spinner/spinner';
 import PlanetDetails from './planet-details';
 import ErrorIndicator from '../error-indicator/error-indicator';
+import Wrap from '../wrap/wrap';
 import './random-planet.css';
 
 export default class RandomPlanet extends Component {
@@ -44,11 +45,11 @@ export default class RandomPlanet extends Component {
     const spinner = loading ? <Spinner/> : null;
     const content = !loading && !error ? <PlanetDetails planet={planet}/> : null;
     return (
-      <div className={loading ? 'random-planet-wrap spinner-wrap' : 'random-planet-wrap'}>
+      <Wrap spinner={loading} additionalClassName={'random-planet-wrap'}>
         {errorIndicator}
         {spinner}
         {content}
-      </div>
+      </Wrap>
     )
   }
 }
