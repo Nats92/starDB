@@ -1,0 +1,43 @@
+.person-details-wrap {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: top;
+  width: 48%;
+  margin: 20px 0 0 2%;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
+  border: 2px solid rgba(73, 68, 68, .1);
+}
+.person-img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+.person-details {
+  margin-left: 20px;
+}
+.person-details .person-list {
+  margin: 0;
+  padding: 0 15px;
+  font-size: 15px;  
+  list-style: none;
+}
+.person-details .person-list li {
+  font-size: 20px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(73, 68, 68, .3);
+}
+.person-name {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+.person-item-title {
+  display: inline-block;
+  margin-right: 10px;
+}
+.person-item-title::after {
+  content: ':';
+}
