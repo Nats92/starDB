@@ -12,14 +12,14 @@
   margin: 0;
   list-style: none;
 }
-.item-list li {
+.list-item {
   font-size: 20px;
   padding: 15px 20px;
 }
-.item-list li:hover,
-.item-list li:focus {
+.list-item:hover,
+.list-item:focus {
   background-color: rgba(255, 255, 255, .1);
 }
-.item-list li + li {
+.list-item + .list-item {
   border-top: 1px solid rgba(73, 68, 68, .3);
 }

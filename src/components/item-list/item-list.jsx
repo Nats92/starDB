@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Spinner from '../spinner/spinner';
-import Wrap from '../wrap/wrap';
+import { Spinner } from '../';
+import { Wrap } from '../';
 import './item-list.css';
 
 export default class ItemList extends Component {
@@ -17,7 +17,11 @@ export default class ItemList extends Component {
     if (!itemsList) { return }
     return itemsList.map((item) => {
       return (
-        <li key={item.id} onClick={() => this.props.onItemSelected(item.id)}>
+        <li 
+          key={item.id} 
+          onClick={() => this.props.onItemSelected(item.id)}
+          className='list-item'
+        >
           {this.props.renderItem(item)}
         </li>
       )

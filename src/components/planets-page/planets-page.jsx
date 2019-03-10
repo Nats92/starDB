@@ -1,6 +1,6 @@
 import React from 'react';
-import ItemList from '../item-list/item-list';
-import PersonDetails from '../person-details/person-details';
+import { ItemList } from '../';
+import { ItemDetails } from '../';
 
 const PlanetsPage = ({ onItemSelected, getData, personId, renderItem }) => (
   <div>
@@ -9,7 +9,7 @@ const PlanetsPage = ({ onItemSelected, getData, personId, renderItem }) => (
       getData={getData}
       renderItem={renderItem}
     />
-    <PersonDetails personId={personId}/>
+    <ItemDetails itemId={personId}/>
   </div>
 )
 export default PlanetsPage;
