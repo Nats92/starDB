@@ -6,7 +6,7 @@ import './item-list.css';
 export default class ItemList extends Component {
   state = {
     itemList: null,
-  }
+  };
 
   componentDidMount() {
     this.props.getData()
@@ -17,8 +17,8 @@ export default class ItemList extends Component {
     if (!itemsList) { return }
     return itemsList.map((item) => {
       return (
-        <li 
-          key={item.id} 
+        <li
+          key={item.id}
           onClick={() => this.props.onItemSelected(item.id)}
           className='list-item'
         >
@@ -26,7 +26,7 @@ export default class ItemList extends Component {
         </li>
       )
     })
-  }
+  };
 
   render() {
     const { itemList } = this.state;
@@ -35,7 +35,7 @@ export default class ItemList extends Component {
       <Wrap spinner={!itemList} additionalClassName='item-list-wrap'>
         {spinner}
         <ul className='item-list'>
-          {this.renderItems(itemList)} 
+          {this.renderItems(itemList)}
         </ul>
       </Wrap>
     )

@@ -8,7 +8,7 @@ const withData = (View, getData) => {
       item: {},
       image: null,
       loading: true,
-    }
+    };
 
     componentDidMount() {
       this.updateItem();
@@ -23,24 +23,24 @@ const withData = (View, getData) => {
     updateItem = () => {
       const { itemId, getImageUrl } = this.props;
       if (!itemId) {
-        this.setState({ loading: false })
+        this.setState({ loading: false });
         return;
       }
-      this.setState({ loading: true })
+      this.setState({ loading: true });
       getData(itemId).then((item) => {
-        this.setState({ 
-          item, 
-          image: getImageUrl(item.id), 
-          loading: false 
+        this.setState({
+          item,
+          image: getImageUrl(item.id),
+          loading: false
         })
       })
-    }
+    };
     render() {
       if (this.state.loading) {
         return <Wrap spinner={this.state.loading} additionalClassName='item-details-wrap'><Spinner/></Wrap>
       }
-      return <View {...this.props} item={this.state.item} getData={getData}/>
+      return <View {...this.props} item={this.state.item} image={this.state.image} getData={getData}/>
     }
   }
-}
+};
 export default withData;
